@@ -1,5 +1,5 @@
 import "@mantine/core/styles.css";
-import { Box, Button, Flex, MantineProvider, Text } from "@mantine/core";
+import { Box, Button, Flex, MantineProvider } from "@mantine/core";
 import "./App.css";
 import { Connect } from "./components/connect";
 import { Transaction } from "./components/tansaction";

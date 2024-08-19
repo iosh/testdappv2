@@ -7,7 +7,6 @@ import {
 	NumberInput,
 	Flex,
 	Box,
-	Switch,
 	Textarea,
 	Checkbox,
 	Text,
@@ -15,7 +14,7 @@ import {
 import { useForm } from "@mantine/form";
 import { useDisclosure } from "@mantine/hooks";
 import { useWeb3ModalAccount } from "@web3modal/ethers/react";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import {
 	createWalletClient,
 	custom,
@@ -223,14 +222,13 @@ export const Transaction = () => {
 					...rawTxObj,
 					type: txTypeMap[tx.type],
 				},
-				(key, value) => (typeof value === "bigint" ? String(value) : value),
+				(_, value) => (typeof value === "bigint" ? String(value) : value),
 				2,
 			),
 		);
 		try {
-			const cleanTx = pickBy(rawTxObj, identity) as unknown as TxType;
+			const cleanTx = pickBy(rawTxObj, identity) as unknown as any;
 
-			console.log(cleanTx);
 			const provider = walletConnectModel.getWalletProvider();
 
 			if (typeof provider === "undefined") {
@@ -250,7 +248,7 @@ export const Transaction = () => {
 				setAutoPrepareTxTxJson(
 					JSON.stringify(
 						requestTx,
-						(key, value) => (typeof value === "bigint" ? String(value) : value),
+						(_, value) => (typeof value === "bigint" ? String(value) : value),
 						2,
 					),
 				);
