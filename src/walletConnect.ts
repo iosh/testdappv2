@@ -4,7 +4,7 @@ import { createWeb3Modal, defaultConfig } from "@web3modal/ethers/react";
 const metadata = {
   name: "Test Dapp",
   description: "Test Dapp",
-  url: "http:localhost:5173", // origin must match your domain & subdomain
+  url: "https://testdappv2.vercel.app", // origin must match your domain & subdomain
   icons: ["https://avatars.githubusercontent.com/u/37784886"],
 };
 

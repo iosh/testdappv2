@@ -4,6 +4,7 @@ import "./App.css";
 import { Connect } from "./components/connect";
 import { Transaction } from "./components/tansaction";
 import { useWeb3ModalAccount } from "@web3modal/ethers/react";
+import { PersonalSign } from "./components/personalSign";
 
 function App() {
 	const { isConnected } = useWeb3ModalAccount();
@@ -15,7 +16,7 @@ function App() {
 			</Box>
 			{isConnected && (
 				<Box>
-					<Box ml={20}>
+					<Flex ml={20} justify={"center"}>
 						<Button
 							onClick={() =>
 								window.open("https://www.alchemy.com/gwei-calculator")
@@ -23,10 +24,13 @@ function App() {
 						>
 							CFX to wei
 						</Button>
-					</Box>
-
-					<Flex m="lg">
+					</Flex>
+					<Flex m="lg" justify={"center"}>
 						<Transaction />
+					</Flex>
+
+					<Flex direction={"row"} gap={20} justify={"center"}>
+						<PersonalSign />
 					</Flex>
 				</Box>
 			)}
