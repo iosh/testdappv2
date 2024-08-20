@@ -4,7 +4,7 @@ import { useWeb3ModalAccount } from "@web3modal/ethers/react";
 import { walletConnectModel } from "../../walletConnect";
 import { useState } from "react";
 import { useDisclosure } from "@mantine/hooks";
-import { recoverMessageAddress, toHex, verifyMessage } from "viem";
+import { toHex, verifyMessage } from "viem";
 
 interface FormValues {
 	message: string;

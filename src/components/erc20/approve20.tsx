@@ -1,4 +1,4 @@
-import { Box, Button, NumberInput, Textarea, TextInput } from "@mantine/core";
+import { Box, Button, Textarea, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useDisclosure } from "@mantine/hooks";
 import { useWeb3ModalAccount } from "@web3modal/ethers/react";

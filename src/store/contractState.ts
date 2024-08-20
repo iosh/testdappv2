@@ -1,6 +1,6 @@
 import type { Address } from "viem";
 import { create } from "zustand";
-import { createJSONStorage, devtools, persist } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
 
 interface contractState {
   deployed: {
@@ -16,7 +16,7 @@ interface contractState {
 
 export const useContractStore = create<contractState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       deployed: {},
       addDeployedContract: (key, contractAddress) =>
         set((state) => ({
