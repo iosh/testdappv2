@@ -5,6 +5,7 @@ import { Connect } from "./components/connect";
 import { Transaction } from "./components/tansaction";
 import { useWeb3ModalAccount } from "@web3modal/ethers/react";
 import { PersonalSign } from "./components/personalSign";
+import { SignTypedData } from "./components/signTypedData";
 
 function App() {
 	const { isConnected } = useWeb3ModalAccount();
@@ -31,6 +32,7 @@ function App() {
 
 					<Flex direction={"row"} gap={20} justify={"center"}>
 						<PersonalSign />
+						<SignTypedData />
 					</Flex>
 				</Box>
 			)}
