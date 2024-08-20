@@ -6,6 +6,8 @@ import { Transaction } from "./components/tansaction";
 import { useWeb3ModalAccount } from "@web3modal/ethers/react";
 import { PersonalSign } from "./components/personalSign";
 import { SignTypedData } from "./components/signTypedData";
+import { ERC20 } from "./components/erc20";
+import { NFT } from "./components/erc721";
 
 function App() {
 	const { isConnected } = useWeb3ModalAccount();
@@ -16,7 +18,7 @@ function App() {
 				<Connect />
 			</Box>
 			{isConnected && (
-				<Box>
+				<Box mb={20}>
 					<Flex ml={20} justify={"center"}>
 						<Button
 							onClick={() =>
@@ -30,9 +32,17 @@ function App() {
 						<Transaction />
 					</Flex>
 
-					<Flex direction={"row"} gap={20} justify={"center"}>
+					<Flex m="lg" direction={"row"} gap={20} justify={"center"}>
 						<PersonalSign />
 						<SignTypedData />
+					</Flex>
+
+					<Flex m="lg" direction={"row"} gap={20} justify={"center"}>
+						<ERC20 />
+					</Flex>
+
+					<Flex m="lg" direction={"row"} gap={20} justify={"center"}>
+						<NFT />
 					</Flex>
 				</Box>
 			)}

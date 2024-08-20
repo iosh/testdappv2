@@ -4,7 +4,7 @@ import { useWeb3ModalAccount } from "@web3modal/ethers/react";
 import { walletConnectModel } from "../../walletConnect";
 import { useState } from "react";
 import { useDisclosure } from "@mantine/hooks";
-import { toHex, verifyMessage } from "viem";
+import { recoverMessageAddress, toHex, verifyMessage } from "viem";
 
 interface FormValues {
 	message: string;
@@ -44,7 +44,8 @@ export const PersonalSign = () => {
 	const [signature, setSignature] = useState("");
 	const handleSubmit = async (values: FormValues, isEncode: boolean) => {
 		const provider = walletConnectModel.getWalletProvider();
-
+		setError("");
+		setSignature("");
 		if (!provider) {
 			return setError("Wallet not connected");
 		}
