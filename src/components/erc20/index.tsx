@@ -145,12 +145,11 @@ export const ERC20 = () => {
 			if (!provider) {
 				return setError("Wallet not connected");
 			}
-
 			try {
 				const data = encodeFunctionData({
 					abi: ERC20Contract.abi,
 					functionName: "mint",
-					args: [receiver as Address, parseUnits(amount, 18)],
+					args: [receiver as Address, parseUnits(`${amount}`, 18)],
 				});
 
 				const tx = formatTransactionRequest({
