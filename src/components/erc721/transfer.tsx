@@ -48,7 +48,7 @@ export const Transfer721 = ({ onTransfer }: Props) => {
 					label="receiver address"
 					{...form.getInputProps("receiver")}
 				/>
-				<NumberInput label="nft id" {...form.getInputProps("amount")} />
+				<NumberInput label="nft id" {...form.getInputProps("id")} />
 				<Button mt={10} type="submit" loading={loading}>
 					safeTransferFrom
 				</Button>
