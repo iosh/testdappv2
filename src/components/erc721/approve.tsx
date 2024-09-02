@@ -1,7 +1,6 @@
 import { Box, Button, NativeSelect, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useDisclosure } from "@mantine/hooks";
-import { useWeb3ModalAccount } from "@web3modal/ethers/react";
 import { useCallback } from "react";
 import { isAddress } from "viem";
 
@@ -15,11 +14,10 @@ interface Props {
 }
 
 export const Approve721 = ({ onApprove: onTransfer }: Props) => {
-	const { address } = useWeb3ModalAccount();
 	const form = useForm<Approve721FormValues>({
 		mode: "uncontrolled",
 		initialValues: {
-			approveAddress: address,
+			approveAddress: "",
 			approved: "true",
 		},
 		validate: {
