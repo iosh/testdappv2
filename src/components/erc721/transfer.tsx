@@ -8,7 +8,7 @@ import { isAddress } from "viem";
 export interface Transfer721FormValues {
 	from: string;
 	receiver: string;
-	id: string;
+	id: number;
 }
 
 interface Props {
@@ -22,7 +22,7 @@ export const Transfer721 = ({ onTransfer }: Props) => {
 		initialValues: {
 			from: address,
 			receiver: address,
-			id: "",
+			id: 0,
 		},
 		validate: {
 			receiver: (address) => (isAddress(address) ? null : "Invalid address"),
