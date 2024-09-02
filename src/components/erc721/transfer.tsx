@@ -26,7 +26,7 @@ export const Transfer721 = ({ onTransfer }: Props) => {
 		},
 		validate: {
 			receiver: (address) => (isAddress(address) ? null : "Invalid address"),
-			id: (id) => (id ? null : "Invalid id"),
+			id: (id) => (id >=0 ? null : "Invalid id"),
 		},
 	});
 
