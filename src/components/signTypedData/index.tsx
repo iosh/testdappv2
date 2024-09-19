@@ -22,7 +22,7 @@ const getTypedData = (chainId: number) => {
 			version: "1",
 		},
 		message: {
-			contents: "Hello, Bob!",
+			contents: "Hello, Bob!\n How are you?\n It's great to see you!\n Bye!", 
 			from: {
 				name: "Cow",
 				wallets: [
