@@ -1,4 +1,4 @@
-import { confluxESpaceTestnet } from "viem/chains";
+import { confluxESpaceTestnet, confluxESpace } from "viem/chains";
 import { createWeb3Modal, defaultConfig } from "@web3modal/ethers/react";
 
 const metadata = {
@@ -8,10 +8,11 @@ const metadata = {
   icons: ["https://avatars.githubusercontent.com/u/37784886"],
 };
 
+const rpcUrl = confluxESpace.rpcUrls.default.http[0];
 const ethersConfig = defaultConfig({
   metadata,
-  defaultChainId: 71,
-  rpcUrl: confluxESpaceTestnet.rpcUrls.default.http[0],
+  defaultChainId: 1030,
+  rpcUrl: rpcUrl,
 });
 
 export const walletConnectModel = createWeb3Modal({
@@ -19,11 +20,11 @@ export const walletConnectModel = createWeb3Modal({
   ethersConfig,
   chains: [
     {
-      chainId: confluxESpaceTestnet.id,
-      name: confluxESpaceTestnet.name,
-      currency: confluxESpaceTestnet.nativeCurrency.symbol,
-      explorerUrl: confluxESpaceTestnet.blockExplorers.default.url,
-      rpcUrl: confluxESpaceTestnet.rpcUrls.default.http[0],
+      chainId: confluxESpace.id,
+      name: confluxESpace.name,
+      currency: confluxESpace.nativeCurrency.symbol,
+      explorerUrl: confluxESpace.blockExplorers.default.url,
+      rpcUrl: rpcUrl,
     },
   ],
   enableAnalytics: false,

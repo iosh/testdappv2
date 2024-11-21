@@ -31,6 +31,7 @@ import { identity, pickBy } from "lodash-es";
 import "./index.css";
 import { walletConnectModel } from "../../walletConnect";
 import { confluxESpaceTestnet } from "viem/chains";
+import { CONFLUX_SCAN_URL } from "../../utlis/constant";
 
 export type TxType = Prettify<
 	UnionOmit<
@@ -360,7 +361,7 @@ export const Transaction = () => {
 						<Button
 							mt={10}
 							onClick={() =>
-								window.open(`https://evmtestnet.confluxscan.io/tx/${txHash}`)
+								window.open(`${CONFLUX_SCAN_URL}/tx/${txHash}`)
 							}
 						>
 							OpenInScan

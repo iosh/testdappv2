@@ -30,6 +30,7 @@ import { type ERC721FormValues, Mint721 } from "./mint.tsx";
 import { ERC721Contract } from "../../contract/erc721.ts";
 import { Transfer721, type Transfer721FormValues } from "./transfer.tsx";
 import { Approve721, type Approve721FormValues } from "./approve.tsx";
+import { CONFLUX_SCAN_URL } from "../../utlis/constant.tsx";
 
 interface FormValues {
 	name: string;
@@ -297,7 +298,7 @@ export const NFT = () => {
 								<Button
 									onClick={() =>
 										window.open(
-											`https://evmtestnet.confluxscan.io/tx/${txHash}`,
+											`${CONFLUX_SCAN_URL}/tx/${txHash}`,
 										)
 									}
 								>

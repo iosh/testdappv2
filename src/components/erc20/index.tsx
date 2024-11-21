@@ -30,6 +30,7 @@ import { waitForTransactionReceipt } from "viem/actions";
 import { type ERC20FormValues, Mint20 } from "./mint.tsx";
 import { Transfer20, Transfer20FormValues } from "./transfer.tsx";
 import { Approve20, Approve2020FormValues } from "./approve20.tsx";
+import { CONFLUX_SCAN_URL } from "../../utlis/constant.tsx";
 
 interface FormValues {
 	name: string;
@@ -296,7 +297,7 @@ export const ERC20 = () => {
 								<Button
 									onClick={() =>
 										window.open(
-											`https://evmtestnet.confluxscan.io/tx/${txHash}`,
+											`${CONFLUX_SCAN_URL}/tx/${txHash}`,
 										)
 									}
 								>

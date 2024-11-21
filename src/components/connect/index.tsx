@@ -25,7 +25,7 @@ export const Connect = () => {
 				</Text>
 
 				<ActionButton
-					title="eSpace Testnet"
+					title="eSpace Mainnet"
 					onConnect={open}
 					onDisconnect={disconnect}
 					connected={isConnected}
