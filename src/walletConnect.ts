@@ -1,4 +1,4 @@
-import { confluxESpaceTestnet, confluxESpace } from "viem/chains";
+import { confluxESpace } from "viem/chains";
 import { createWeb3Modal, defaultConfig } from "@web3modal/ethers/react";
 
 const metadata = {
