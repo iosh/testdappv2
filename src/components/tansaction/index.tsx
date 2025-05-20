@@ -171,12 +171,12 @@ export const Transaction = () => {
 			return (
 				<Box>
 					<TextInput
-						label="gas(in Gwei)"
+						label="gas"
 						key={form.key("gas")}
 						{...form.getInputProps("gas")}
 					/>
 					<TextInput
-						label="gasPrice(in Gwei)"
+						label="gasPrice(in wei)"
 						key={form.key("gasPrice")}
 						{...form.getInputProps("gasPrice")}
 					/>
